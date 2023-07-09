@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/homeStyle.css">
+<script src="utils.js" charset="utf-8" defer></script>
+<script src="meetingManager.js" charset="utf-8" defer></script>
+<meta charset="UTF-8">
+<title>Home</title>
+</head>
+<body>
+<h1>Meeting management page</h1>
+<h3 id="welcomeMessage"></h3>
+
+<p id="tablesErrorMessage" style="color: red"></p>
+<h2>NEXT MEETINGS CREATED BY YOU</h2>
+<div id="createdMeetings">
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Date and Time</th>
+                <th>Duration (minutes)</th>
+            </tr>
+        </thead>
+        <tbody id="createdMeetingsTableBody">
+        </tbody>
+    </table>
+</div>
+<div style="display: none" id="noCreatedMeetingsMessage">There are not incoming created meetings</div>
+
+<h2>NEXT MEETINGS YOU ARE INVITED TO</h2>
+<div id="invitedMeetings">
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Date and Time</th>
+                <th>Duration (minutes)</th>
+            </tr>
+        </thead>
+        <tbody id="invitedMeetingsTableBody">
+        </tbody>
+    </table>
+</div>
+<div style="display: none" id="noInvitedMeetingsMessage">There are not incoming meetings you are invited to</div>
+
+<h2>CREATE A NEW MEETING</h2>
+<form class="meetingForm" id="meetingForm">
+		Title: <input id="title" type="text" name="title" required><br>
+		Date and time: <input id="dateTime" type="datetime-local" name="dateTime" required><br> 
+		Duration (in minutes): <input id="duration" type="number" name="duration" required min="1" max="1440"><br>
+		Max number of partecipants: <input id="max" type="number" name="max" required min="1"><br>
+		<button type="button" id="meetingFormButton">Create Meeting</button>
+		<p id="meetingFormMessage"></p>
+	</form>
+
+<div style="display: none" id="anagraphic" class="modal">
+	<div class="modalContent">
+		<h3>Select users to invite to the meeting</h3>
+		<p id="maxInvitationsMessage"></p>
+		<p id="anagraphicErrorMessage" style="color: red"></p>
+		<p id="triesMessage"></p>
+		<p id="anagraphicServerErrorMessage" style="color: red"></p>
+		<div>
+			<form id="anagraphicForm">
+				<div style="overflow-y: scroll; max-height: 500px;">
+					<table>
+					<thead>
+						<tr>
+							<th>Username</th>
+							<th>Name</th>
+							<th>Surname</th>
+							<th>Select</th>
+						</tr>
+					</thead>
+					<tbody id="anagraphicTableBody">
+					</tbody>
+					</table>
+				</div>
+				<button type="button" id="inviteButton">INVITE</button>
+			</form>
+		</div>
+		<button id="cancelButton">CANCEL</button>
+	</div>
+</div>
+
+<button id="logoutButton">Logout</button>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/indexStyle.css">
+<script src="utils.js" charset="utf-8" defer></script>
+<script src="indexManager.js" charset="utf-8" defer></script>
+<meta charset="UTF-8">
+<title>Welcome page</title>
+</head>
+<body>
+	<div class="container">
+		<div class="login">
+			<h3>login</h3>
+			<form id="loginForm" action="#">
+			User Name: <input type="text" name="username" required> <br>
+			Password: <input type="password" name="password" required><br>
+			<input id="loginButton" type="submit" value="Login">
+			<p style="color:red;" id="loginErrorMsg"></p>
+			</form>
+		</div>
+		<div class="registration">
+			<h3>registration</h3>
+			<form id="registrationForm" action="#">
+			User Name: <input type="text" name="username" required><br>
+			Name: <input type="text" name="name" required><br>
+			Surname: <input type="text"  name="surname" required><br>
+			Email: <input type="email" name="email" required><br>
+			Password: <input type="password" name="password" required><br>
+			Repeat password: <input type="password" name="re_password" required><br>
+			<input id="registrationButton" type="submit" value="Sign In">
+			<p id="registrationMessage"></p>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
